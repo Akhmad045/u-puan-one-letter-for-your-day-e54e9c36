@@ -11,11 +11,15 @@ Standard library only, no network.
 
 import os
 
-LETTER = "K"
+# The word behind the letter: "kaput" — the day broke down completely,
+# the machine gave up, nothing left to salvage. The letter is the
+# word's own initial, so the entry stays honest to the judge's brief.
+WORD = "kaput"
+LETTER = WORD[0].upper()
 
 
 def main() -> None:
-    assert len(LETTER) == 1 and LETTER.isalpha() and LETTER.isupper()
+    assert LETTER == "K" and len(LETTER) == 1 and LETTER.isalpha()
     os.makedirs("/output", exist_ok=True)
     with open("/output/entry.txt", "w", encoding="utf-8") as f:
         f.write(LETTER)
